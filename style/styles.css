@@ -1,0 +1,276 @@
+/* Reset margins and paddings for consistency across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the background color, font family, and text color for the entire page */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #1c1c1e;
+  color: #f0f0f0;
+  min-height: 100vh;
+  font-size: 115%;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+#blob-effect {
+  height: 13vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, aquamarine, mediumpurple);
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+  z-index: -1;
+  filter: blur(100px);
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+button:hover {
+  background-color: #2c3566;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #3a3a3c;
+  border: none;
+  color: #f0f0f0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+/* Style the header and navigation menu */
+header {
+  padding: 1rem;
+  background-color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#main-content {
+  z-index: 5;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container h1 {
+  margin: 0;
+}
+
+.header-container nav {
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+
+nav li {
+  margin-left: 1.5rem;
+}
+
+nav a {
+  margin-top: 5rem;
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #9fa8da;
+  font-size: 26px;
+  transition: 0.2s;
+}
+
+/* Style the main content sections */
+main {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 250%;
+}
+
+#generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the Generate Idea button */
+#generate-idea {
+  padding: 0.75rem 1.5rem;
+  background-color: #3a3a3c;
+  border: none;
+  color: #f0f0f0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+#generate-idea:hover {
+  background-color: #2c3566;
+}
+
+#add-to-favorites {
+  padding: 0.75rem 1.5rem;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  color: #f0f0f0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+#add-to-favorites:hover {
+  background-color: #2c3566;
+  font-size: 1.2rem;
+}
+
+.idea-container {
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.remove-favorite {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  margin-left: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+/* Hide idea display and favorite button by default */
+#idea-display,
+#add-to-favorites {
+  display: none;
+}
+
+#idea-display {
+  margin-right: 1rem;
+}
+
+/* Style the idea display, history, and favorites list */
+#idea-display,
+#idea-history,
+#favorite-ideas {
+  padding: 1rem;
+  background-color: #000000;
+  border-radius: 5px;
+}
+
+#idea-display {
+  margin-bottom: 1.5rem;
+}
+
+#idea-history li,
+#favorite-ideas li {
+  padding: 0.5rem 0;
+  list-style-type: none;
+  border-bottom: 1px solid #2c2c2e; /* Add a bottom border */
+}
+
+#idea-history li:last-child,
+#favorite-ideas li:last-child {
+  border-bottom: none;
+}
+
+/* Style the footer */
+footer {
+  padding: 1rem;
+  background-color: #2c2c2e;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  header {
+    padding: 0.75rem;
+  }
+
+  #blob-effect {
+    display: none;
+  }
+
+  h1,
+  h2 {
+    font-size: 200%;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 150%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+
+  .idea-container {
+    flex-direction: column;
+  }
+
+  #idea-display {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
